@@ -1023,6 +1023,10 @@
 <script>
   // ===== Tela de abertura (envelope cerimonioso) =====
   // Trava o scroll até a Rhafa clicar no botão pra abrir.
+  // Impede o navegador de restaurar posição de scroll antiga ao recarregar.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
   (function() {
     const openingScreen = document.getElementById('openingScreen');
     const openingBtn = document.getElementById('openingBtn');
@@ -1062,6 +1066,8 @@
       setTimeout(() => {
         openingScreen.classList.add('gone');
         document.body.classList.remove('locked');
+        // Garante que o site abra no topo (hero), não na seção onde estava antes
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         // Após o fade out, remove a tela do DOM pra liberar memória
         setTimeout(() => openingScreen.remove(), 1300);
       }, 2600);
