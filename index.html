@@ -544,15 +544,33 @@
     margin-bottom: 1.5rem;
     opacity: 0.75;
   }
-  .music-player .music-audio {
+  .music-player .yt-embed {
     width: 100%;
     margin-top: 1rem;
-    border-radius: 40px;
-    filter: invert(0.88) hue-rotate(170deg) saturate(0.85);
-    transition: filter 0.4s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(212, 169, 60, 0.25);
+    aspect-ratio: 16 / 9;
+    background: #000;
   }
-  .music-player.playing .music-audio {
-    filter: invert(0.92) hue-rotate(170deg) saturate(1);
+  .music-player .yt-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  .music-player .yt-hint {
+    margin-top: 0.9rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--pink-deep);
+    opacity: 0.75;
+    letter-spacing: 0.04em;
+  }
+  .music-player .yt-hint::before {
+    content: '▸ ';
+    color: var(--gold-soft);
   }
   .music-pending {
     margin-top: 1rem;
@@ -600,7 +618,7 @@
 <div class="floating-bg" id="floatBg"></div>
 
 <section class="hero">
-  <div class="hero-eyebrow">pra minha neneco</div>
+  <div class="hero-eyebrow">pra minha neneca</div>
   <h1>Adjailton</h1>
   <div class="amp">&amp;</div>
   <h1>Rhafaella</h1>
@@ -704,7 +722,7 @@
   <div class="inner">
     <p class="eyebrow">aperta aqui</p>
     <h2>Pra você sentir<br>o que eu sinto</h2>
-    <p class="love-prompt">cada toque é um "te amo, neneco"</p>
+    <p class="love-prompt">cada toque é um "te amo, neneca"</p>
     <button class="love-btn" id="loveBtn" onclick="explodirCoracoes()">
       aperta<br>o meu<br>coração
     </button>
@@ -730,14 +748,19 @@
   <div class="inner">
     <p class="eyebrow">nossa trilha</p>
     <h2>Pra ouvir junto</h2>
-    <div class="music-player" id="musicPlayer">
+    <div class="music-player playing" id="musicPlayer">
       <div class="album-art"></div>
-      <div class="track-title">"No Céu dos Teus Braços"</div>
-      <div class="track-meta">Adjailton &amp; Rhafaella · 2026</div>
-      <audio id="musicAudio" class="music-audio" controls preload="metadata">
-        <source src="musica/no-ceu-dos-teus-bracos-adja-rhafaella.mp3" type="audio/mpeg">
-        Seu navegador não suporta o player de áudio.
-      </audio>
+      <div class="track-title">"No Céu dos Braços Teus"</div>
+      <div class="track-meta">Di Paullo &amp; Paulino · nossa música</div>
+      <div class="yt-embed">
+        <iframe
+          src="https://www.youtube.com/embed/Eq4e-cCh1wE?rel=0&modestbranding=1"
+          title="No Céu dos Braços Teus — Di Paullo & Paulino"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+      <div class="yt-hint">aperta o play e me abraça enquanto toca</div>
     </div>
   </div>
 </section>
@@ -791,8 +814,10 @@
     floatBg.appendChild(h);
   }
 
-  // Player de música — anima vinyl ao tocar
-  const musicAudio = document.getElementById('musicAudio');
+  // Player de música — vinyl gira em loop (a classe .playing já fica fixa no HTML)
+  // Como o YouTube iframe não expõe eventos sem a API JS deles, deixamos o vinyl
+  // girando contínuo pra manter o clima visual mesmo se a Rhafa ainda não deu play.
+  const musicAudio = null;
   const musicPlayer = document.getElementById('musicPlayer');
   if (musicAudio && musicPlayer) {
     musicAudio.addEventListener('play', () => musicPlayer.classList.add('playing'));
@@ -801,7 +826,7 @@
   }
 
   // Botão coração
-  const frases = ['te amo, neneco', 'te amo demais', 'te amo absurdamente', 'te amo sem parar', 'no céu dos teus braços', 'te amo, te amo, te amo'];
+  const frases = ['te amo, neneca', 'te amo demais', 'te amo absurdamente', 'te amo sem parar', 'no céu dos teus braços', 'te amo, te amo, te amo'];
   let cliques = 0;
   function explodirCoracoes() {
     cliques++;

@@ -22,7 +22,7 @@ Encomendado pra surpreender a Rhafa.
 - Risada dela: quando ele só olha e ela solta uma gargalhada
 - Momento marcante: primeiro encontro presencial, primeiro abraço todo sem graça
 - Mudança: ela ensinou ele a se vestir melhor e a ser mais organizado
-- Apelido só do casal: **neneco**
+- Apelido só do casal: **neneca**
 - **Tom escolhido:** intenso e apaixonado
 - **Estilo musical:** sertanejo romântico (referência do cliente: "No céu dos teus braços")
 
@@ -68,7 +68,7 @@ Abrir `http://localhost:3000`.
 - **Iniciais usadas no selo e footer:** `A & R`
 - **Contador:** desde 26/11/2024 ~20:00 (estimativa — 1 ano e 6 meses contados pra trás de 2026-05-26; confirmar com cliente)
 - **Frase de capa:** `"No céu dos teus braços é onde eu sei voltar."` (gancho do refrão da música, também fecha a carta)
-- **Eyebrow do hero:** "pra minha neneco" (apelido só deles)
+- **Eyebrow do hero:** "pra minha neneca" (apelido só deles)
 - **Polaroids:** 8 momentos diferentes — parque iluminado, beijo na bochecha, casa à tarde, vermelho no espelho, selfie noturna, cinema, camisa do Mengão, academia
 - **Timeline:** 3 marcos — Instagram (te vi na tela primeiro) → primeiro abraço sem graça → hoje (mil e quinhentos dias depois com as manias dela)
 

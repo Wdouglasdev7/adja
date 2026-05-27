@@ -18,7 +18,7 @@
 - **Bônus:** ele olha pra ela e ela solta uma risada
 - **Momento marcante:** o primeiro encontro presencial — o abraço sem graça que virou pra vida toda
 - **Mudança:** ela ensinou ele a se vestir melhor e a ser mais organizado
-- **Apelido só do casal:** "neneco"
+- **Apelido só do casal:** "neneca"
 - **Ocasião:** Dia dos Namorados 2026
 - **Tom:** intenso e apaixonado
 - **Estilo:** sertanejo romântico moderno (referência do cliente: "No céu dos teus braços")
@@ -66,7 +66,7 @@ Tua boca beijando, teu peito a me embalar
 É no céu dos teus braços que eu quero ficar
 
 [Bridge]
-Neneco, ouve essa música e entende o que eu sou
+Neneca, ouve essa música e entende o que eu sou
 Cada verso que eu canto é o coração que falou
 Te amo demais, do meu jeito sem fim
 Se um dia faltar palavra, lembra que eu sou pra ti
@@ -131,14 +131,14 @@ emotional radio-ready production, passionate romantic ballad
 - ✅ **Tom romântico universal/clichê (pedido do cliente):** "tem coisa que palavra não dá conta de explicar", "meu peito acelera, meu mundo se acalma", "você é a mulher mais bonita que Deus criou", "te amo do jeito que poeta tenta escrever"
 - ✅ **Imagem sensorial:** "teu peito a me embalar" (tato + som), "tua boca beijando" (tato), "se eu te abraçar agora, eu não sei te soltar" (corpo)
 - ✅ **Promessa/cena concreta:** bridge — "se um dia faltar palavra, lembra que eu sou pra ti"
-- ✅ **Referências pessoais leves (só 1):** apelido **"neneco"** na bridge — o restante é romantismo universal, como pedido
+- ✅ **Referências pessoais leves (só 1):** apelido **"neneca"** na bridge — o restante é romantismo universal, como pedido
 - ✅ **Refrão cantável:** 4 linhas, gancho "No céu dos teus braços" mantido, métrica fluida pro sertanejo raiz
 - ✅ **Estrutura íntegra:** Intro → Verse 1 → Pre-Chorus → Chorus → Verse 2 → Pre-Chorus → Chorus → Bridge → Chorus → Outro
 - ✅ **Tamanho:** ~250 palavras (alvo 180–280)
 - ✅ **Português brasileiro natural** (sertanejo raiz anos 2000): "tu virou a minha calma", "do meu jeito sem fim", "Deus criou"
 - ✅ **Tom intenso e apaixonado:** "Se um dia eu te perder, eu perco o meu lugar", "ainda assim não cabe o tamanho que é querer"
 - ⚠️ **Aceita clichês românticos (escolha consciente do cliente):** "destino", "fez sentido pra mim", "Deus criou", "amor verdadeiro" — V3 abraça o clichê de propósito (pedido explícito do cliente)
-- ✅ **Nome da Rhafa NÃO aparece** — só "neneco" na bridge
+- ✅ **Nome da Rhafa NÃO aparece** — só "neneca" na bridge
 
 ---
 
@@ -146,7 +146,7 @@ emotional radio-ready production, passionate romantic ballad
 
 | Versão | Estado | Direção |
 |---|---|---|
-| **V3** | **Ativa** | Romântico clássico, universal/clichê, só "neneco" como referência pessoal |
+| **V3** | **Ativa** | Romântico clássico, universal/clichê, só "neneca" como referência pessoal |
 | V2 | Arquivada | Versos com cenas específicas + ciúme bobo (vulnerabilidade) |
 | V1 | Arquivada | Biográfica (Instagram, abraço sem graça, 3 manias repetidas) |
 
@@ -162,7 +162,7 @@ emotional radio-ready production, passionate romantic ballad
 
 | Item | V2 | V3 |
 |---|---|---|
-| **Densidade de referências pessoais** | Alta — todas as 3 manias, mudança, risada, ciúme | **Mínima** — só "neneco" na bridge |
+| **Densidade de referências pessoais** | Alta — todas as 3 manias, mudança, risada, ciúme | **Mínima** — só "neneca" na bridge |
 | **Tom** | Íntimo/cena específica do casal | **Romântico universal/clichê** ("Deus criou", "destino", "amor verdadeiro") |
 | **Verse 1** | "Eu te olho de longe e tu solta uma risada" (cena) | "Tem coisa que palavra não dá conta de explicar" (declaração emocional) |
 | **Verse 2** | Manhã + ciúme + "roupa do teu gosto" | "Eu te amo do jeito que poeta tenta escrever" + "mulher mais bonita que Deus criou" |
@@ -183,7 +183,7 @@ emotional radio-ready production, passionate romantic ballad
 7. **Critérios da escolha:**
    - Refrão sai **cantável e melódico** — "No céu dos teus braços" precisa subir bonito
    - Vocal masculino quente, **soft tenor apaixonado**, não estridente
-   - Bridge "Neneco, se um dia o tempo tentar nos separar..." precisa sair **com peso emocional** (é o momento mais íntimo da música)
+   - Bridge "Neneca, se um dia o tempo tentar nos separar..." precisa sair **com peso emocional** (é o momento mais íntimo da música)
    - Outro "É só ali que eu sei voltar" termina suave
 8. Se a geração sair < 2 min → usar **Extend** com mesma letra/style
 9. Baixar MP3 → renomear `no-ceu-dos-teus-bracos-adja-rhafaella.mp3` → colocar em `deploy-adja-rhafaella/musica/`

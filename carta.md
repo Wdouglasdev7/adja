@@ -13,7 +13,7 @@
 - **3 manias amadas:** pega no nariz dele, canta do nada, belisca ele — e a risada que ela solta quando ele só olha pra ela
 - **Momento marcante:** primeiro encontro presencial — primeiro abraço todo sem graça
 - **Mudança que ela causou:** ensinou a se vestir melhor e a ser mais organizado
-- **Apelido só do casal:** "neneco"
+- **Apelido só do casal:** "neneca"
 - **Ocasião:** Dia dos Namorados 2026
 - **Tom:** intenso e apaixonado
 
@@ -31,7 +31,7 @@
 >
 > Te prometo continuar te dando motivo pra rir quando eu te olhar. Continuar deixando teu beliscão me marcar. Continuar te ouvindo cantar até quando eu já souber a letra.
 >
-> E você sabe como termina, neneco.
+> E você sabe como termina, neneca.
 > No céu dos teus braços é onde eu sei voltar.
 >
 > Teu,
@@ -41,13 +41,13 @@
 
 ## Checklist de qualidade — aprovação
 
-- ✅ **Detalhes específicos nominalmente:** Instagram ("te vi numa tela... foto, story"), primeiro abraço "todo sem graça, meio torto, meio bobo", pega no nariz, canta no silêncio, beliscão na cintura, a risada quando ele só olha pra ela, "era torto... bagunça na gaveta", "hoje eu me visto pensando se você ia gostar", apelido "neneco"
+- ✅ **Detalhes específicos nominalmente:** Instagram ("te vi numa tela... foto, story"), primeiro abraço "todo sem graça, meio torto, meio bobo", pega no nariz, canta no silêncio, beliscão na cintura, a risada quando ele só olha pra ela, "era torto... bagunça na gaveta", "hoje eu me visto pensando se você ia gostar", apelido "neneca"
 - ✅ **Vulnerabilidade real:** "antes de você eu era torto. Era bagunça na gaveta, era qualquer roupa que tava em cima, era desorganizado por dentro também"
 - ✅ **Imagem sensorial forte:** "voz que enche a casa toda" (som), "teu beliscão sem dó na minha cintura" (tato), abraço "meio torto, meio bobo" (corpo)
 - ✅ **Promessa concreta:** "continuar te dando motivo pra rir quando eu te olhar. Continuar deixando teu beliscão me marcar. Continuar te ouvindo cantar até quando eu já souber a letra"
 - ✅ **Zero clichês banidos:** sem "alma gêmea", "metade da laranja", "amor da minha vida", "você me completa", "para sempre e sempre"
 - ✅ **Estrutura íntegra:** abertura forte (Instagram → travada no primeiro abraço) → manias específicas → mudança ("antes era torto") → promessa → despedida (apelido + gancho da música)
 - ✅ **Tamanho:** ~365 palavras (alvo 250–400)
-- ✅ **Português brasileiro natural:** "torto", "bagunça na gaveta", "neneco", "sem dó", "tava em cima"
+- ✅ **Português brasileiro natural:** "torto", "bagunça na gaveta", "neneca", "sem dó", "tava em cima"
 - ✅ **Tom intenso e apaixonado:** "alguma coisa dentro de mim sabia que era ali que eu queria ficar pelo resto da vida", "como se o mundo inteiro coubesse na tua gargalhada", "como quem assina o nome no que é teu"
 - ✅ **Conexão com a música:** fechamento usa o gancho do refrão ("No céu dos teus braços é onde eu sei voltar") — carta e música se conversam
