@@ -544,86 +544,15 @@
     margin-bottom: 1.5rem;
     opacity: 0.75;
   }
-  .music-player .yt-embed {
+  .music-player .music-audio {
     width: 100%;
     margin-top: 1rem;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(212, 169, 60, 0.25);
-    aspect-ratio: 16 / 9;
-    background: #000;
-    position: relative;
+    border-radius: 40px;
+    filter: invert(0.88) hue-rotate(170deg) saturate(0.85);
+    transition: filter 0.4s ease;
   }
-  .music-player .yt-embed iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-    position: relative;
-    z-index: 1;
-  }
-  .music-player .yt-cover {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    background-image:
-      linear-gradient(180deg, rgba(58,14,26,0.10) 0%, rgba(58,14,26,0.55) 100%),
-      url('fotos/02-rhafaella.jpeg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 1.2rem;
-    cursor: pointer;
-    transition: opacity 0.6s ease;
-  }
-  .music-player .yt-cover::after {
-    content: '▶';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 76px; height: 76px;
-    background: linear-gradient(135deg, var(--red-soft), var(--red));
-    color: var(--cream);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    padding-left: 6px;
-    box-shadow:
-      0 10px 30px rgba(196, 30, 58, 0.55),
-      inset 0 -4px 12px rgba(142, 14, 38, 0.4),
-      inset 0 4px 12px rgba(255,255,255,0.2);
-    animation: heartbeat 1.5s ease-in-out infinite;
-  }
-  .music-player .yt-cover .yt-cover-label {
-    position: relative;
-    z-index: 1;
-    font-family: 'Dancing Script', cursive;
-    color: var(--cream);
-    font-size: 1.1rem;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-    text-align: center;
-    line-height: 1.3;
-  }
-  .music-player.revealed .yt-cover {
-    opacity: 0;
-    pointer-events: none;
-  }
-  .music-player .yt-hint {
-    margin-top: 0.9rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 0.85rem;
-    color: var(--pink-deep);
-    opacity: 0.75;
-    letter-spacing: 0.04em;
-  }
-  .music-player .yt-hint::before {
-    content: '▸ ';
-    color: var(--gold-soft);
+  .music-player.playing .music-audio {
+    filter: invert(0.92) hue-rotate(170deg) saturate(1);
   }
   .music-pending {
     margin-top: 1rem;
@@ -801,23 +730,14 @@
   <div class="inner">
     <p class="eyebrow">nossa trilha</p>
     <h2>Pra ouvir junto</h2>
-    <div class="music-player playing" id="musicPlayer">
+    <div class="music-player" id="musicPlayer">
       <div class="album-art"></div>
       <div class="track-title">"No Céu dos Braços Teus"</div>
       <div class="track-meta">Di Paullo &amp; Paulino · nossa música</div>
-      <div class="yt-embed">
-        <iframe
-          id="ytFrame"
-          src="https://www.youtube.com/embed/Eq4e-cCh1wE?rel=0&modestbranding=1&enablejsapi=1"
-          title="No Céu dos Braços Teus — Di Paullo & Paulino"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen></iframe>
-        <div class="yt-cover" id="ytCover" role="button" tabindex="0" aria-label="Tocar nossa música">
-          <span class="yt-cover-label">toca pra mim, neneca</span>
-        </div>
-      </div>
-      <div class="yt-hint">aperta o play e me abraça enquanto toca</div>
+      <audio id="musicAudio" class="music-audio" controls preload="metadata">
+        <source src="musica/no-ceu-dos-bracos-teus.mp3" type="audio/mpeg">
+        Seu navegador não suporta o player de áudio.
+      </audio>
     </div>
   </div>
 </section>
@@ -871,28 +791,9 @@
     floatBg.appendChild(h);
   }
 
-  // Player de música — vinyl gira em loop (a classe .playing já fica fixa no HTML)
-  // A foto da Rhafa cobre o iframe; clicar revela o player e dispara o play.
-  const ytCover = document.getElementById('ytCover');
-  const ytFrame = document.getElementById('ytFrame');
+  // Player de música — anima vinil ao tocar (foto da Rhafa gira como disco)
+  const musicAudio = document.getElementById('musicAudio');
   const musicPlayer = document.getElementById('musicPlayer');
-  function revealAndPlay() {
-    if (!musicPlayer || !ytFrame) return;
-    musicPlayer.classList.add('revealed');
-    try {
-      ytFrame.contentWindow.postMessage(
-        '{"event":"command","func":"playVideo","args":""}',
-        '*'
-      );
-    } catch (e) { /* iframe ainda não pronto, sem problema */ }
-  }
-  if (ytCover) {
-    ytCover.addEventListener('click', revealAndPlay);
-    ytCover.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); revealAndPlay(); }
-    });
-  }
-  const musicAudio = null;
   if (musicAudio && musicPlayer) {
     musicAudio.addEventListener('play', () => musicPlayer.classList.add('playing'));
     musicAudio.addEventListener('pause', () => musicPlayer.classList.remove('playing'));
