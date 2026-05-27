@@ -593,9 +593,282 @@
     .polaroid { width: 170px; }
     .hero { background-attachment: scroll; }
   }
+
+  /* ===== TELA DE ABERTURA (envelope cerimonioso) ===== */
+  body.locked { overflow: hidden; height: 100vh; }
+
+  .opening-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    background:
+      radial-gradient(ellipse at center, rgba(232, 90, 114, 0.35), transparent 70%),
+      linear-gradient(135deg, var(--red-deep) 0%, var(--red) 50%, var(--red-deep) 100%);
+    overflow: hidden;
+    transition: opacity 1.2s ease, visibility 1.2s ease;
+  }
+  .opening-screen.gone {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* Corações soltos atrás do envelope */
+  .opening-screen::before,
+  .opening-screen::after {
+    content: '❤';
+    position: absolute;
+    color: rgba(255, 209, 220, 0.18);
+    font-size: 18rem;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .opening-screen::before { top: -3rem; left: -3rem; transform: rotate(-15deg); }
+  .opening-screen::after { bottom: -3rem; right: -3rem; transform: rotate(20deg); font-size: 22rem; }
+
+  .opening-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 460px;
+    width: 100%;
+  }
+
+  .opening-eyebrow {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--gold-soft);
+    text-align: center;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.5);
+  }
+  .opening-eyebrow::before, .opening-eyebrow::after {
+    content: '❦';
+    color: var(--gold);
+    margin: 0 0.7rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .opening-message {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    color: var(--cream);
+    text-align: center;
+    line-height: 1.4;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+  }
+  .opening-signature {
+    font-family: 'Italianno', cursive;
+    font-size: clamp(2.6rem, 7vw, 3.6rem);
+    color: var(--gold-soft);
+    line-height: 1;
+    margin-top: 0.5rem;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+  }
+
+  /* Envelope */
+  .envelope-wrap {
+    perspective: 1200px;
+    width: clamp(260px, 80vw, 360px);
+    position: relative;
+  }
+  .envelope {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    transform-style: preserve-3d;
+  }
+  .envelope-body {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #c41e3a 0%, #8e0e26 100%);
+    border-radius: 4px;
+    box-shadow:
+      0 20px 50px rgba(0,0,0,0.45),
+      inset 0 0 0 1px rgba(212, 169, 60, 0.5),
+      inset 0 -2px 6px rgba(0,0,0,0.25);
+    overflow: hidden;
+  }
+  /* Triângulos laterais do envelope (linhas do corpo) */
+  .envelope-body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(45deg, transparent 49.5%, rgba(212, 169, 60, 0.35) 49.5%, rgba(212, 169, 60, 0.35) 50.5%, transparent 50.5%),
+      linear-gradient(-45deg, transparent 49.5%, rgba(212, 169, 60, 0.35) 49.5%, rgba(212, 169, 60, 0.35) 50.5%, transparent 50.5%);
+  }
+  /* Aba superior do envelope */
+  .envelope-flap {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 60%;
+    background: linear-gradient(180deg, #d63550 0%, #8e0e26 100%);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top center;
+    transform: rotateX(0deg);
+    transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 -3px 8px rgba(0,0,0,0.3);
+    z-index: 3;
+  }
+  .envelope-flap::after {
+    content: '';
+    position: absolute;
+    inset: 1px 1px auto 1px;
+    height: calc(100% - 1px);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    background: linear-gradient(180deg, transparent 30%, rgba(212, 169, 60, 0.18) 100%);
+  }
+  /* Lacre de cera */
+  .envelope-seal {
+    position: absolute;
+    top: 48%; left: 50%;
+    width: 60px; height: 60px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ff4d6d 0%, #c41e3a 45%, #8e0e26 90%);
+    box-shadow:
+      0 6px 16px rgba(0,0,0,0.4),
+      inset 0 -4px 8px rgba(0,0,0,0.3),
+      inset 0 3px 6px rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-soft);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    z-index: 4;
+    transition: transform 0.6s ease 0.2s, opacity 0.6s ease 0.2s;
+  }
+
+  /* Carta saindo de dentro */
+  .envelope-letter {
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    right: 5%;
+    bottom: 8%;
+    background: var(--cream);
+    border-radius: 3px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    z-index: 2;
+    transform: translateY(0);
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1) 1.2s, opacity 0.6s ease 1.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+  }
+  .envelope-letter .letter-heart {
+    color: var(--red);
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+  }
+  .envelope-letter .letter-line {
+    width: 60%;
+    height: 1px;
+    background: rgba(196, 30, 58, 0.2);
+    margin: 0.3rem 0;
+  }
+  .envelope-letter .letter-text {
+    font-family: 'Italianno', cursive;
+    color: var(--red);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  /* Estados após o clique */
+  .envelope.opening .envelope-seal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4) rotate(-30deg);
+  }
+  .envelope.opening .envelope-flap {
+    transform: rotateX(180deg);
+  }
+  .envelope.opening .envelope-letter {
+    transform: translateY(-140%) scale(1.05);
+  }
+
+  /* Botão */
+  .opening-btn {
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    color: var(--red-deep);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.35),
+      inset 0 -4px 10px rgba(142, 14, 38, 0.15),
+      inset 0 3px 8px rgba(255,255,255,0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: heartbeat 1.8s ease-in-out infinite;
+    position: relative;
+    z-index: 5;
+  }
+  .opening-btn::before { content: '❤ '; }
+  .opening-btn::after { content: ' ❤'; }
+  .opening-btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.45);
+  }
+  .opening-btn:active { transform: scale(0.97); }
+  .envelope.opening ~ .opening-btn,
+  .envelope-wrap.opened ~ .opening-btn { animation: none; }
+
+  @media (max-width: 720px) {
+    .opening-message { font-size: 1.6rem; }
+    .opening-signature { font-size: 2.6rem; }
+    .envelope-seal { width: 48px; height: 48px; font-size: 0.7rem; }
+  }
 </style>
 </head>
-<body>
+<body class="locked">
+
+<div class="opening-screen" id="openingScreen">
+  <div class="opening-inner">
+    <div class="opening-eyebrow">para o meu amor</div>
+    <div class="opening-message">
+      Tem uma coisa que eu fiz pensando<br>só em você, neneca.
+    </div>
+    <div class="envelope-wrap" id="envelopeWrap">
+      <div class="envelope" id="envelope">
+        <div class="envelope-body"></div>
+        <div class="envelope-letter">
+          <div class="letter-heart">❤</div>
+          <div class="letter-line"></div>
+          <div class="letter-text">A &amp; R</div>
+          <div class="letter-line"></div>
+        </div>
+        <div class="envelope-flap"></div>
+        <div class="envelope-seal">A ❤ R</div>
+      </div>
+    </div>
+    <div class="opening-signature">Adjailton</div>
+    <button class="opening-btn" id="openingBtn" type="button">
+      clique aqui pra abrir
+    </button>
+  </div>
+</div>
 
 <div class="floating-bg" id="floatBg"></div>
 
@@ -748,6 +1021,55 @@
 </footer>
 
 <script>
+  // ===== Tela de abertura (envelope cerimonioso) =====
+  // Trava o scroll até a Rhafa clicar no botão pra abrir.
+  (function() {
+    const openingScreen = document.getElementById('openingScreen');
+    const openingBtn = document.getElementById('openingBtn');
+    const envelope = document.getElementById('envelope');
+    const envelopeWrap = document.getElementById('envelopeWrap');
+    if (!openingScreen || !openingBtn || !envelope) return;
+
+    function abrir() {
+      if (envelope.classList.contains('opening')) return;
+      envelope.classList.add('opening');
+      envelopeWrap.classList.add('opened');
+      openingBtn.disabled = true;
+      openingBtn.style.opacity = '0.5';
+      openingBtn.style.pointerEvents = 'none';
+
+      // Chuva de corações enquanto o envelope abre
+      const cores = ['#c41e3a', '#e85a72', '#f4a8b8', '#d4a93c', '#ff6b8b', '#ffd1dc'];
+      for (let i = 0; i < 60; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('div');
+          heart.className = 'flying-heart';
+          heart.textContent = ['❤', '♥', '❥'][Math.floor(Math.random() * 3)];
+          heart.style.left = (Math.random() * 100) + 'vw';
+          heart.style.top = (window.innerHeight + 40) + 'px';
+          heart.style.fontSize = (Math.random() * 26 + 16) + 'px';
+          heart.style.color = cores[Math.floor(Math.random() * cores.length)];
+          heart.style.setProperty('--drift', (Math.random() * 320 - 160) + 'px');
+          heart.style.setProperty('--rot', (Math.random() * 720 - 360) + 'deg');
+          const dur = Math.random() * 2 + 3;
+          heart.style.animation = `flyUp ${dur}s ease-out forwards`;
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), dur * 1000);
+        }, i * 30);
+      }
+
+      // Espera a animação do envelope terminar antes de revelar o site
+      setTimeout(() => {
+        openingScreen.classList.add('gone');
+        document.body.classList.remove('locked');
+        // Após o fade out, remove a tela do DOM pra liberar memória
+        setTimeout(() => openingScreen.remove(), 1300);
+      }, 2600);
+    }
+
+    openingBtn.addEventListener('click', abrir);
+  })();
+
   // Contador — desde o início do namoro (Novembro de 2024, ajustar quando o cliente confirmar a data)
   const start = new Date('2024-11-26T20:00:00');
   function tick() {
