@@ -1,4 +1,4 @@
-# Adja & Rhafaella · Cupido
+# Adjailton & Rhafaella · Cupido
 
 Pacote completo do casal **Adjailton & Rhafaella** — Dia dos Namorados 2026.
 Encomendado pra surpreender a Rhafa.
@@ -47,7 +47,7 @@ Encomendado pra surpreender a Rhafa.
 - [ ] **Exportar molde como PDF**
   - Abrir o molde no navegador → `Ctrl+P` → "Salvar como PDF"
   - Renomear: `carta-adja-rhafaella.pdf`
-- [ ] **Enviar pro Adja:**
+- [ ] **Enviar pro Adjailton:**
   - PDF do molde (ele imprime e escreve à mão)
   - Link do site (pra ele conferir antes)
   - Texto da carta de [`carta.md`](carta.md) pra ele copiar à mão no molde
